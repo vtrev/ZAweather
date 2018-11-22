@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weatherZA</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./css/simple-grid.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-12 main-widget">
+            <div>Town : {{town}}</div>
+            <div>Condition : {{main}}</div>
+            <div>Description : {{description}}</div>
+            <div>Current temperature : {{temp}}</div>
+            <div>Min Temp : {{mintemp}}</div>
+            <div>Max Temp : {{maxtemp}}</div>
+            <button v-on:click="getForecast">Get weather</button>
+            <hr>
+            <select v-model="selected">
+                <option disabled value="">Please select your language</option>
+                <option>Afrikaans</option>
+                <option>English </option>
+                <option>Sotho</option>
+                <option>Xhosa</option>
+                <option>Zulu</option>
+            </select>
+            <span>Selected language: {{ selected }}</span>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+            title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+</body>
+<script src="./js/vue.js"></script>
+
+</html>
