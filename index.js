@@ -42,7 +42,10 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-app.get('/api/language', weatherApi.getPhrase)
+app.get('/api/language', weatherApi.getPhrase);
+app.get('/api/main', weatherApi.getMain);
+app.get('/api/keyword', weatherApi.getKeyword)
+
 
 
 

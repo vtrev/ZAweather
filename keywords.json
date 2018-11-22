@@ -1,0 +1,16 @@
+{
+    "afrikaans": {
+        "town": "dorp",
+        "min": "minimum temperatuur",
+        "max": "",
+        "current_temp": "",
+        "feels_like": ""
+    },
+    "zulu": {
+        "town": "",
+        "min": "",
+        "max": "",
+        "current_temp": "",
+        "feels_like": ""
+    }
+}

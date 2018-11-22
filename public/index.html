@@ -16,12 +16,25 @@
 
     <div class="row">
         <div class="col-12 main-widget">
-            <div>Town : {{town}}</div>
-            <div>Condition : {{main}}</div>
-            <div>Description : {{description}}</div>
-            <div>Current temperature : {{temp}}</div>
-            <div>Min Temp : {{mintemp}}</div>
-            <div>Max Temp : {{maxtemp}}</div>
+
+            <div class="card">
+                <img src="./img/sun.svg" alt="">
+                <div class="town">{{townText}} : {{town}} {{temp}}&#8451; <br>
+                    <div>{{main}}</div>
+                    <div>{{description}}</div>
+                </div>
+                <div>Min Temp : {{mintemp}}&#8451;</div>
+                <div>Max Temp : {{maxtemp}}&#8451;</div>
+
+                <div class="fiveday inblock">
+                    <img src="./img/rain.svg" alt="">
+                    <img src="./img/rain.svg" alt="">
+                    <img src="./img/rain.svg" alt="">
+                    <img src="./img/rain.svg" alt="">
+                    <img src="./img/rain.svg" alt="">
+
+                </div>
+            </div>
             <button v-on:click="getForecast">Get weather</button>
             <hr>
             <select v-model="selected">
@@ -32,7 +45,6 @@
                 <option>Xhosa</option>
                 <option>Zulu</option>
             </select>
-            <span>Selected language: {{ selected }}</span>
 
         </div>
     </div>

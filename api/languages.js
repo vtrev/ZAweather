@@ -1,3 +1,5 @@
+const keywords = require("../keywords.json");
+
 module.exports = function (weatherInstance) {
     // get phrase in selected langaage
     let getPhrase = async function (req, res) {
@@ -16,8 +18,50 @@ module.exports = function (weatherInstance) {
             console.log(err);
         }
     }
+    let getMain = async function (req, res) {
+        console.log('gettting main')
+        // let language = req.params.language;
+        let language = req.query.language;
+        let id = req.query.id;
+
+        console.log(language, id)
+        try {
+            let result = await weatherInstance.getMain(language, id);
+
+            res.json({
+                status: 'success',
+                data: result
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    let getKeyword = async function (req, res) {
+        console.log('gettting keyword')
+        // let language = req.params.language;
+        let language = req.query.language;
+        // let id = req.query.id;
+
+        let keyWordsForLanguage = keywords[language];
+
+        // console.log(language, id)
+        try {
+            // let result = await weatherInstance.getKeyword(language, id);
+            res.json({
+                status: 'success',
+                data: keyWordsForLanguage
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+
+
 
     return {
-        getPhrase
+        getPhrase,
+        getMain,
+        getKeyword
     }
 };

@@ -1,0 +1,51 @@
+.inblock {
+    display: inline-block;
+}
+
+
+/* Product card */
+
+.card {
+    height: 450px;
+    width: 350px;
+    border: 2px solid black;
+    margin: 0 auto;
+    position: relative;
+}
+
+.card img {
+    width: 180px;
+    height: 160px;
+}
+
+.card button {
+    /* padding: 10px 10px; */
+    border: none;
+    font-size: 24px;
+    width: 70px;
+    background-color: white;
+    height: 30px;
+    text-align: center;
+}
+
+.card button:hover {
+    border: none;
+    border-radius: 25px;
+    background-color: lime;
+}
+
+.town {
+    font-weight: bolder;
+}
+
+.fiveday {
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+}
+
+.fiveday img {
+    width: 50px;
+    height: 50px;
+    border-right: 1px solid black;
+}

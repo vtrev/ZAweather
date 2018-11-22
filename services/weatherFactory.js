@@ -5,7 +5,24 @@ module.exports = function weatherService(pool) {
         // console.log(result.rows)
         return result.rows[0];
     }
+    let getMain = async function (language, id) {
+        console.log(language, id)
+        let result = await pool.query(`SELECT ${language} FROM main WHERE id=${id}`);
+        // console.log(result.rows)
+        return result.rows[0];
+    }
+    let getKeyword = async function (language, id) {
+        console.log(language, id)
+        let result = await pool.query(`SELECT ${language} FROM keywords WHERE id=${id}`);
+        // console.log(result.rows)
+        return result.rows[0];
+    }
+
+
+
     return {
-        getLanguage
+        getLanguage,
+        getMain,
+        getKeyword
     }
 };
