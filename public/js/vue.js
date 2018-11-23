@@ -11,32 +11,20 @@ let weatherWidget = new Vue({
         temp: "Loading...",
         description: "Loading",
         currentCode: 0,
-        selected: 'sotho',
+        selected: 'zulu',
         mainId: 0,
         townText: 'Town',
-        keywordId: 0
+        keywordId: 0,
+        mintemptext: "Min Temp",
+        maxtemptext: "Max Temp"
     },
     computed: {
 
     },
 
     methods: {
-        getKeywordsFromApi: function (keyword) {
-            if (keyword.includes("Temperature")) {
-                return 1
-            }
-            if (keyword.includes("Minimum")) {
-                return 2
-            }
-            if (keyword.includes('Maximum')) {
-                return 3
-            }
-            if (keyword === "town") {
-                return 4
-            }
-            if (keyword.includes('Feels')) {
-                return 5
-            }
+        getKeywordsFromApi: function (languages) {
+
         },
         getMainFromApi: function (main) {
             if (main.includes('Clear')) {
@@ -93,15 +81,16 @@ let weatherWidget = new Vue({
         },
         callKeywords: async function () {
             try {
-                const town = await axios.get('/api/keyword', {
+                const result = await axios.get('/api/keyword', {
                     params: {
-                        id: this.keywordId,
-                        language: this.selected
+                        language: this.selected.toLowerCase()
                     }
                 });
-                console.log(town)
+                console.log(result)
                 if (this.selected !== "English") {
-                    this.town = Object.values(town.data.data)[0];
+                    this.townText = result.data.data.town;
+                    this.mintemptext = result.data.data.min;
+                    this.maxtemptext = result.data.data.max;
                 }
 
                 // this.applyLanguage(phrase)
@@ -115,8 +104,8 @@ let weatherWidget = new Vue({
             this.main = data.data3.current.condition.text;
             this.town = data.data1.name;
             this.temp = data.data1.main.temp;
-            this.mintemp = data.data2.list[39].main.temp_min;
-            this.maxtemp = data.data2.list[0].main.temp_max;
+            this.mintemp = 15;
+            this.maxtemp = 23;
             this.description = data.data1.weather[0].description;
             this.currentCode = data.data1.weather[0].id;
             this.mainId = this.getMainFromApi(this.main);
@@ -166,7 +155,7 @@ let weatherWidget = new Vue({
     },
 
     mounted: function () {
-        this.getForecast()
+        // this.getForecast()
 
     }
 

@@ -1,3 +1,15 @@
+CREATE TABLE conditions
+(
+    id integer NOT NULL DEFAULT nextval('conditions_id_seq'::regclass),
+    code integer,
+    sotho text,
+    zulu text,
+    xhosa text ,
+    afrikaans text ,
+    CONSTRAINT conditions_pkey PRIMARY KEY (id)
+);
+
+
 insert into conditions (code,sotho,zulu,xhosa,afrikaans) values (200,'sefefo se nang le pula', 'ukuduma kwezulu ngemvula elula','ukuduma kwezulu ngemvula elula','donderstorm met ligte reën'),
 (201,'sefefo se nang le pula', 'ukuduma kwemvula','ukuduma kwezulu nemvula','donderstorm met reën'),	 
 (202,'sefefo se nang le pula e matla', 'ukuduma kwezulu ngemvula enkulu','iindudumo ezinemvula enkulu','donderstorm met ''n swaar reën'),	 
@@ -51,8 +63,8 @@ ukuduma kweqabunga','donderstorm met n ligte motreën'),
 (762,'molora oa seretse se chesang', 'umlotha ontaba-mlilo','Isanti','sand'),	
 (771,'sefefo', 'isiphepho','siqhwithi','storm'),	
 (781,'sefefo sa leholimo', 'isiqhwaga','umlotha womlilo','vulkaniese as'),	
-(800,'leholimo le hlakileng', 'isibhakabhaka esibonakalayo','Esibhakabhakeni','squalls'),		
-(801,'maru a seng makae feela', 'amafu ambalwa','amafu ambalwa','squalls'),
+(800,'leholimo le hlakileng', 'isibhakabhaka esibonakalayo','Esibhakabhakeni','skone hemel ruim'),		
+(801,'maru a seng makae feela', 'amafu ambalwa','amafu ambalwa','skone hemel ruim'),
 		
 (802,'ho phatloha maru', 'amafu ahlakazekile','amafu ahlakazekile','paar wolke'),		
 (803,'ho phatloha maru', 'amafu aphukile','amafu aphukile','gebroke wolke'),	

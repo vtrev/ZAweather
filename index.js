@@ -19,7 +19,7 @@ let local = process.env.LOCAL || false;
 useSSL = true;
 
 // which db connection to use
-const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:pass@127.0.0.1:5432/weatherdb';
+const connectionString = process.env.DATABASE_URL || 'postgresql://postgres@127.0.0.1:5432/weatherdb';
 const pool = new Pool({
     connectionString,
     ssl: useSSL

@@ -2,15 +2,29 @@
     "afrikaans": {
         "town": "dorp",
         "min": "minimum temperatuur",
-        "max": "",
-        "current_temp": "",
-        "feels_like": ""
+        "max": "maksimum temeperatuure",
+        "current_temp": "temperatuure",
+        "feels_like": "voel soos"
     },
     "zulu": {
-        "town": "",
-        "min": "",
-        "max": "",
-        "current_temp": "",
-        "feels_like": ""
+        "town": "idolobha",
+        "min": "izinga lobushushu uluncinci",
+        "max": "izinga lokushisa olukhulu",
+        "current_temp": "ukushisa",
+        "feels_like": "zwakala ngathi"
+    },
+    "xhosa": {
+        "town": "idolophu",
+        "min": "izinga lokushisa oluncane",
+        "max": "izinga lobushushu oluphezulu",
+        "current_temp": "ubushushu",
+        "feels_like": "vakala ngathi"
+    },
+    "sotho": {
+        "town": "toropo",
+        "min": "mocheso omonyenyane",
+        "max": "mocheso o moholo",
+        "current_temp": "mocheso",
+        "feels_like": "o ikutloa joalo"
     }
 }

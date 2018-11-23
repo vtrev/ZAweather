@@ -37,16 +37,10 @@ module.exports = function (weatherInstance) {
         }
     }
     let getKeyword = async function (req, res) {
-        console.log('gettting keyword')
-        // let language = req.params.language;
         let language = req.query.language;
-        // let id = req.query.id;
-
         let keyWordsForLanguage = keywords[language];
 
-        // console.log(language, id)
         try {
-            // let result = await weatherInstance.getKeyword(language, id);
             res.json({
                 status: 'success',
                 data: keyWordsForLanguage
