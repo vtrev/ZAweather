@@ -16,7 +16,8 @@ let weatherWidget = new Vue({
         townText: 'Town',
         keywordId: 0,
         mintemptext: "Min Temp",
-        maxtemptext: "Max Temp"
+        maxtemptext: "Max Temp",
+        fivedaytext: "Next five days :"
     },
     computed: {
 
@@ -89,6 +90,8 @@ let weatherWidget = new Vue({
                 console.log(result)
                 if (this.selected !== "English") {
                     this.townText = result.data.data.town;
+                    let capital = this.townText.charAt(0).toUpperCase();
+                    this.townText = capital + this.townText.slice(1)
                     this.mintemptext = result.data.data.min;
                     this.maxtemptext = result.data.data.max;
                 }
@@ -122,7 +125,7 @@ let weatherWidget = new Vue({
                 let response2 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=1a71a377471dd00335cbe8d5ad69c944&units=metric
             `);
 
-                let response3 = await fetch(`http://api.apixu.com/v1/current.json?key=330b9bb40cd5408e8eb104844182211&q=${lat},${lon}`);
+                let response3 = await fetch(`https://api.apixu.com/v1/current.json?key=330b9bb40cd5408e8eb104844182211&q=${lat},${lon}`);
                 let data1 = await response1.json();
                 let data2 = await response2.json();
                 let data3 = await response3.json();
@@ -155,7 +158,7 @@ let weatherWidget = new Vue({
     },
 
     mounted: function () {
-        // this.getForecast()
+        this.getForecast()
 
     }
 

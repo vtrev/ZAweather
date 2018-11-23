@@ -1,30 +1,34 @@
 {
     "afrikaans": {
-        "town": "dorp",
-        "min": "minimum temperatuur",
-        "max": "maksimum temeperatuure",
-        "current_temp": "temperatuure",
-        "feels_like": "voel soos"
+        "town": "Dorp",
+        "min": "Minimum temperatuur",
+        "max": "Maksimum temeperatuure",
+        "current_temp": "Temperatuure",
+        "feels_like": "Voel soos",
+        "next5": "Volgende vyf dae"
     },
     "zulu": {
-        "town": "idolobha",
-        "min": "izinga lobushushu uluncinci",
-        "max": "izinga lokushisa olukhulu",
-        "current_temp": "ukushisa",
-        "feels_like": "zwakala ngathi"
+        "town": "Idolobha",
+        "min": "Izinga lobushushu uluncinci",
+        "max": "Izinga lokushisa olukhulu",
+        "current_temp": "Ukushisa",
+        "feels_like": "Zwakala ngathi",
+        "next5": "Izinsuku ezinhlanu ezizayo"
     },
     "xhosa": {
-        "town": "idolophu",
-        "min": "izinga lokushisa oluncane",
-        "max": "izinga lobushushu oluphezulu",
-        "current_temp": "ubushushu",
-        "feels_like": "vakala ngathi"
+        "town": "Idolophu",
+        "min": "Izinga lokushisa oluncane",
+        "max": "Izinga lobushushu oluphezulu",
+        "current_temp": "Ubushushu",
+        "feels_like": "Vakala ngathi",
+        "next5": "Iintsuku ezintlanu ezizayo"
     },
     "sotho": {
-        "town": "toropo",
-        "min": "mocheso omonyenyane",
-        "max": "mocheso o moholo",
-        "current_temp": "mocheso",
-        "feels_like": "o ikutloa joalo"
+        "town": "Toropo",
+        "min": "Mocheso omonyenyane",
+        "max": "Mocheso o moholo",
+        "current_temp": "Mocheso",
+        "feels_like": "O ikutloa joalo",
+        "next5": "Matsatsi a mahlano a latelang"
     }
 }
