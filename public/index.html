@@ -10,6 +10,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./css/simple-grid.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
     <div class="row centext">
         <div class="col-12 main-widget">
 
-            <div class="card">
+            <div v-if="showWeather" class="card">
                 <img src="./img/sun.svg" alt="">
                 <div class="town">{{townText}} : {{town}} {{temp}}&#8451; <br>
                     <div>{{main}}</div>
@@ -27,6 +29,7 @@
                 <div>{{mintemptext}} : {{mintemp}}&#8451;</div>
                 <div>{{maxtemptext}} : {{maxtemp}}&#8451;</div>
                 <p>{{fivedaytext}}</p>
+
                 <div class="fiveday inblock">
                     <img src="./img/cloud.svg" alt="">
                     <img id="suncloud" src="./img/suncloud.svg" alt="">
@@ -36,35 +39,30 @@
 
                 </div>
             </div>
-            <button v-on:click="getForecast">Get weather</button>
-            <hr>
-            <select v-model="selected">
-                <option disabled value="">Please select your language</option>
-                <option>Afrikaans</option>
-                <option>English </option>
-                <option>Sotho</option>
-                <option>Xhosa</option>
-                <option>Zulu</option>
-            </select>
+            <div v-if="showSetup" class="setup">
+                <h3>Welcome to MzansiWeather!</h3>
+                <img id="icon" src="./img/icon.png" alt="">
+                <br>
+                <p>Please select your language below</p>
+                <select v-model="selected">
+                    <option disabled value="">Please select your language</option>
+                    <option>Afrikaans</option>
+                    <option>English </option>
+                    <option>Sotho</option>
+                    <option>Xhosa</option>
+                    <option>Zulu</option>
+                </select>
+                <br>
+                <br>
+                <button v-on:click="show" id="setupButton">Setup</button>
+                <br><br><br>
 
+                <button v-on:click="getForecast"><img src="./img/car.png" id="car"></i></button>
+
+
+            </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- 
     <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a
             href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"

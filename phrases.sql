@@ -9,6 +9,32 @@ CREATE TABLE conditions
     CONSTRAINT conditions_pkey PRIMARY KEY (id)
 );
 
+CREATE TABLE main
+(
+    id integer NOT NULL,
+    sotho text NOT NULL,
+    afrikaans text NOT NULL,
+    xhosa text NOT NULL,
+    zulu text NOT NULL
+)
+
+
+insert into main (id,sotho,afrikaans,xhosa,zulu) values (1,	"hlakisa",	"duidelik"	,"kucacile"	,"kucacile"),
+(2,	"leru"	,"wolk",	"amafu",	"amafu")
+,(3	,"letsatsi le likele"	,"sonnige"	,"ilanga"	,"ilanga")
+,(4	,"pula"	,"reën"	,"imvula"	,"imvula"),
+(5	,"moea"	,"wind",	"umoya",	"imvula");
+
+
+
+
+
+
+
+
+
+
+
 
 insert into conditions (code,sotho,zulu,xhosa,afrikaans) values (200,'sefefo se nang le pula', 'ukuduma kwezulu ngemvula elula','ukuduma kwezulu ngemvula elula','donderstorm met ligte reën'),
 (201,'sefefo se nang le pula', 'ukuduma kwemvula','ukuduma kwezulu nemvula','donderstorm met reën'),	 

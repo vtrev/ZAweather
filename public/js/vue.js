@@ -11,19 +11,26 @@ let weatherWidget = new Vue({
         temp: "Loading...",
         description: "Loading",
         currentCode: 0,
-        selected: 'zulu',
+        selected: '',
         mainId: 0,
         townText: 'Town',
         keywordId: 0,
         mintemptext: "Min Temp",
         maxtemptext: "Max Temp",
-        fivedaytext: "Next five days :"
+        fivedaytext: "Next five days :",
+        showSetup: true,
+        showWeather: false
     },
     computed: {
 
     },
 
     methods: {
+        show: function () {
+            this.getForecast();
+            this.showSetup = false;
+            this.showWeather = true;
+        },
         getKeywordsFromApi: function (languages) {
 
         },

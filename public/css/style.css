@@ -7,8 +7,7 @@
 
 .card {
     height: 450px;
-    width: 350px;
-    border: 2px solid black;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -47,7 +46,7 @@
 }
 
 .fiveday img {
-    width: 50px;
+    width: 45px;
     height: 45px;
     /* border-right: 1px solid black; */
 }
@@ -57,9 +56,7 @@
     bottom: 5px;
 }
 
-.main-widget {
-    display: block;
-}
+
 
 .centext {
     text-align: center;
@@ -67,4 +64,47 @@
 
 hr {
     width: 50%;
+}
+
+button #car {
+    width: 125px;
+    height: 125px;
+}
+
+button {
+    background-color: lime;
+    border-radius: 50%;
+    border: 2px solid gray;
+}
+
+#setupButton {
+    width: 100px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 25px;
+}
+
+select {
+    margin: 0 10px;
+    background-color: lime;
+    width: 80%;
+    height: 35px;
+    font-size: 15px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+
+button,
+input:focus,
+button,
+input:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+#icon {
+    width: 146px;
+    height: 150px;
 }
