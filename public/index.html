@@ -20,6 +20,7 @@
         <div class="col-12 main-widget">
 
             <div v-if="showWeather" class="card">
+
                 <img src="./img/sun.svg" alt="">
                 <div class="town">{{townText}} : {{town}} {{temp}}&#8451; <br>
                     <div>{{main}}</div>
@@ -29,15 +30,16 @@
                 <div>{{mintemptext}} : {{mintemp}}&#8451;</div>
                 <div>{{maxtemptext}} : {{maxtemp}}&#8451;</div>
                 <p>{{fivedaytext}}</p>
-
+                <br><br>
                 <div class="fiveday inblock">
                     <img src="./img/cloud.svg" alt="">
                     <img id="suncloud" src="./img/suncloud.svg" alt="">
                     <img src="./img/cloud.svg" alt="">
                     <img src="./img/cloud.svg" alt="">
                     <img src="./img/cloud.svg" alt="">
-
+                    <br><br>
                 </div>
+                <button id="home" v-on:click="showSet"><i class="fas fa-home"></i></button>
             </div>
             <div v-if="showSetup" class="setup">
                 <h3>Welcome to MzansiWeather!</h3>
@@ -56,17 +58,20 @@
                 <br>
                 <button v-on:click="show" id="setupButton">Setup</button>
                 <br><br><br>
-
-                <button v-on:click="getForecast"><img src="./img/car.png" id="car"></i></button>
+                <button onclick="play()"><img src="./img/car.png" id="car"></i></button>
 
 
             </div>
         </div>
     </div>
-    <!-- 
-    <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a
-            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
-            title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+    <script>
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+    </script>
+    <audio id="audio" src="./ audio/audio.mp3"></audio>
+
 </body>
 <script src="./js/vue.js"></script>
 

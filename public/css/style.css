@@ -108,3 +108,7 @@ input:active {
     width: 146px;
     height: 150px;
 }
+
+#home {
+    background: white;
+}

@@ -2,8 +2,8 @@
     "afrikaans": {
         "town": "Dorp",
         "min": "Minimum temperatuur",
-        "max": "Maksimum temeperatuure",
-        "current_temp": "Temperatuure",
+        "max": "Maksimum temeperatuur",
+        "current_temp": "Temperatuur",
         "feels_like": "Voel soos",
         "next5": "Volgende vyf dae"
     },

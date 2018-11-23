@@ -31,6 +31,10 @@ let weatherWidget = new Vue({
             this.showSetup = false;
             this.showWeather = true;
         },
+        showSet: function () {
+            this.showSetup = true;
+            this.showWeather = false;
+        },
         getKeywordsFromApi: function (languages) {
 
         },
@@ -69,10 +73,8 @@ let weatherWidget = new Vue({
             }
         },
         callMain: async function () {
-            console.log('calling main')
             try {
                 const response = await axios.get('/api/main', {
-                    // console.log()
                     params: {
                         id: this.mainId,
                         language: this.selected
@@ -94,13 +96,13 @@ let weatherWidget = new Vue({
                         language: this.selected.toLowerCase()
                     }
                 });
-                console.log(result)
                 if (this.selected !== "English") {
                     this.townText = result.data.data.town;
                     let capital = this.townText.charAt(0).toUpperCase();
                     this.townText = capital + this.townText.slice(1)
                     this.mintemptext = result.data.data.min;
                     this.maxtemptext = result.data.data.max;
+                    this.fivedaytext = result.data.data.next5;
                 }
 
                 // this.applyLanguage(phrase)
@@ -109,13 +111,12 @@ let weatherWidget = new Vue({
             }
         },
         useData: function (data) {
-            console.log(data)
             let data2Lenght = data.data2.list.length;
             this.main = data.data3.current.condition.text;
             this.town = data.data1.name;
             this.temp = data.data1.main.temp;
             this.mintemp = 15;
-            this.maxtemp = 23;
+            this.maxtemp = 25;
             this.description = data.data1.weather[0].description;
             this.currentCode = data.data1.weather[0].id;
             this.mainId = this.getMainFromApi(this.main);
